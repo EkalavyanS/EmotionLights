@@ -5,7 +5,7 @@ EmotionLights is an open-source application that enhances your environment by dy
 
 ## Features:
 
-Dynamic Lighting: EmotionLights analyzes your emotions using OpenAI's vision model and adjusts the background lights to create an atmosphere that matches your mood.
+- Dynamic Lighting: EmotionLights analyzes your emotions using OpenAI's vision model and adjusts the background lights to create an atmosphere that matches your mood.
 
 - Tauri Frontend: The frontend interface is built with Tauri, providing a sleek and responsive user experience across different platforms.
 

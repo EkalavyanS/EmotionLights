@@ -13,22 +13,22 @@ Dynamic Lighting: EmotionLights analyzes your emotions using OpenAI's vision mod
 
 - Open Source: EmotionLights is an open-source project, inviting contributions from developers worldwide to enhance its features and functionality.
 
-How it Works:
+## How it Works:
 
-Image Input: Users provide images through the application interface or an integrated camera.
+- Image Input: Users provide images through the application interface or an integrated camera.
 
-Emotion Detection: The backend utilizes OpenAI's vision model to analyze the provided images and detect the user's emotions.
+- Emotion Detection: The backend utilizes OpenAI's vision model to analyze the provided images and detect the user's emotions.
 
-Light Adjustment: Based on the detected emotions, EmotionLights dynamically adjusts the background lights to match the user's mood.
+- Light Adjustment: Based on the detected emotions, EmotionLights dynamically adjusts the background lights to match the user's mood.
 
 ## Upcoming Feature:
 
-Light Glowing: Currently under development, the light glowing feature will add an immersive layer to EmotionLights. It will enable the application to control physical LED lights, creating a synchronized glowing effect that complements the detected emotions.
+- Light Glowing: Currently under development, the light glowing feature will add an immersive layer to EmotionLights. It will enable the application to control physical LED lights, creating a synchronized glowing effect that complements the detected emotions.
 Contributing:
 
-EmotionLights welcomes contributions from developers of all skill levels. Whether you're interested in adding new features, improving performance, or fixing bugs, your contributions are highly appreciated.
+- EmotionLights welcomes contributions from developers of all skill levels. Whether you're interested in adding new features, improving performance, or fixing bugs, your contributions are highly appreciated.
 
-To contribute, simply fork the EmotionLights repository on GitHub and submit a pull request with your changes. Be sure to follow the contribution guidelines outlined in the project's documentation.
+- To contribute, simply fork the EmotionLights repository on GitHub and submit a pull request with your changes. Be sure to follow the contribution guidelines outlined in the project's documentation.
 
 ## Dependencies:
 

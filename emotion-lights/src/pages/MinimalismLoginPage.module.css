@@ -1,0 +1,130 @@
+.vectorIcon {
+  margin-top: -169px;
+  margin-left: -171px;
+  width: 136.7px;
+  height: 136.7px;
+  position: relative;
+}
+.vectorIcon1,
+.vectorIcon2 {
+  width: 136.7px;
+  height: 136.7px;
+  position: relative;
+}
+.vectorWrapper {
+  height: 219.7px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 83px 0 0;
+  box-sizing: border-box;
+}
+.vectorGroup,
+.vectorParent,
+.vectorWrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.vectorGroup {
+  margin-left: -219px;
+  width: 615.7px;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 155%;
+  flex-shrink: 0;
+  gap: 20px;
+}
+.vectorParent {
+  height: 768px;
+  width: 547.7px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 135px 0 313.5px 151px;
+  box-sizing: border-box;
+  gap: 32.3px;
+  min-width: 547.7px;
+  max-width: 100%;
+}
+.frameChild {
+  align-self: stretch;
+  height: 700px;
+  position: relative;
+  border-radius: 40px;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.minimalismLoginPage,
+.minimalismLoginPageInner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.minimalismLoginPageInner {
+  flex: 1;
+  flex-direction: column;
+  padding: 34px 0 0;
+  min-width: 444px;
+  max-width: 100%;
+}
+.minimalismLoginPage {
+  width: 100%;
+  position: relative;
+  border-radius: 54px;
+  background-color: #fff;
+  overflow: hidden;
+  flex-direction: row;
+  padding: 0 34px 0 0;
+  gap: 101.3px;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1100px) {
+  .vectorParent {
+    flex: 1;
+    padding-top: 88px;
+    padding-bottom: 204px;
+    box-sizing: border-box;
+  }
+  .minimalismLoginPage {
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 1025px) {
+  .vectorParent {
+    padding-left: 75px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .vectorParent {
+    padding-top: 57px;
+    padding-bottom: 133px;
+    box-sizing: border-box;
+  }
+  .minimalismLoginPageInner,
+  .vectorParent {
+    min-width: 100%;
+  }
+  .minimalismLoginPage {
+    gap: 101.3px 51px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .vectorGroup {
+    flex-wrap: wrap;
+  }
+  .vectorParent {
+    height: auto;
+    gap: 16px 32.3px;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+  .minimalismLoginPage {
+    gap: 101.3px 25px;
+  }
+}

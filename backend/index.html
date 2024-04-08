@@ -1,0 +1,16 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Emotion Predictor</title>
+</head>
+<body>
+  <h1>Face Emotion Predictor</h1>
+  <form action="http://localhost:8902/emotion" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept="image/*">
+    <button type="submit">Upload Image</button>
+  </form>
+</body>
+</html>

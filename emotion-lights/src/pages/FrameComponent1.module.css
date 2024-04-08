@@ -1,0 +1,205 @@
+.frameChild {
+  height: 52px;
+  width: 364px;
+  position: relative;
+  border-radius: 13px;
+  background-color: #f2f2f2;
+  display: none;
+  max-width: 100%;
+}
+
+.frameIcon,
+.username {
+  position: relative;
+  z-index: 1;
+}
+
+.frameIcon {
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+
+.username {
+  font-size: 12px;
+  font-family: Poppins;
+  color: #1c1c1c;
+  text-align: left;
+  display: inline-block;
+  min-width: 62px;
+}
+
+.passwordInput,
+.rectangleParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3px 0 0;
+}
+
+.rectangleParent {
+  align-self: stretch;
+  flex: 1;
+  border-radius: 13px;
+  background-color: #f2f2f2;
+  flex-direction: row;
+  padding: 14px 18px;
+  box-sizing: border-box;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.frameItem,
+.frameWrapper {
+  height: 52px;
+  max-width: 100%;
+}
+
+.frameWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 0 8.5px;
+  box-sizing: border-box;
+}
+
+.frameItem {
+  width: 364px;
+  position: relative;
+  border-radius: 13px;
+  background-color: #f2f2f2;
+  display: none;
+}
+
+.frameIcon1 {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+  z-index: 1;
+}
+
+.frameContainer,
+.frameInner,
+.rectangleGroup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.frameInner {
+  width: 58px;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  height: 21px;
+  flex-direction: column;
+  padding: 3px 0 0;
+  font-family: Poppins;
+  font-size: 12px;
+  color: #1c1c1c;
+}
+
+.frameContainer,
+.rectangleGroup {
+  align-self: stretch;
+  flex-direction: row;
+  max-width: 100%;
+}
+
+.rectangleGroup {
+  flex: 1;
+  border-radius: 13px;
+  background-color: #f2f2f2;
+  padding: 14px 18px;
+  gap: 6px;
+}
+
+.frameContainer {
+  height: 52px;
+  padding: 0 0 0 8.5px;
+}
+
+.rectangleDiv {
+  height: 52px;
+  width: 364px;
+  position: relative;
+  border-radius: 13px;
+  background-color: #1c1c1c;
+  display: none;
+  max-width: 100%;
+}
+
+.signup {
+  position: relative;
+  font-size: 12px;
+  display: inline-block;
+  font-family: Poppins;
+  color: #fff;
+  text-align: left;
+  min-width: 44px;
+  z-index: 1;
+}
+
+.frameDiv,
+.greatToSeeYouParent,
+.rectangleContainer {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.rectangleContainer {
+  cursor: pointer;
+  border: 0;
+  padding: 17px 20px 17px 32px;
+  background-color: #1c1c1c;
+  flex: 1;
+  border-radius: 13px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.rectangleContainer:hover {
+  background-color: #4f4f4f;
+}
+
+.frameDiv,
+.greatToSeeYouParent {
+  justify-content: flex-start;
+}
+
+.frameDiv {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 0 0 8.5px;
+}
+
+.greatToSeeYouParent {
+  margin: 0;
+  width: 372.5px;
+  flex-direction: column;
+  padding: 0 0 83.2px;
+  gap: 24.2px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+@media screen and (max-width: 450px) {
+  .greatToSeeYouParent {
+    padding-bottom: 54px;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,7 @@
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const signUser = () => {
+    signInWithEmailAndPassword(auth, email, password).then((data) => {
+      navigate("/", { state: { uid: data.user.uid } });
+    });
+  };

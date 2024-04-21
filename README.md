@@ -59,9 +59,11 @@ Backend:
 ```bash
 npm run dev
 ```
+Arduino:
+Run using Arduino IDE
+
 
 ## Get Started:
 
 Experience the magic of EmotionLights by downloading the latest release or cloning the repository from GitHub. Join our community of developers and enthusiasts to contribute to the project and shape its future. Let's illuminate emotions together with EmotionLights!
 
-#### Disclaimer: EmotionLights is an experimental project and may not always accurately reflect users' emotions. It is intended for entertainment and educational purposes only.

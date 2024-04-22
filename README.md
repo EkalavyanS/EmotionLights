@@ -34,7 +34,7 @@ Contributing:
 
 - Tauri -  https://tauri.app/
 - Express 
-- GPT-4 Api Key
+- GPT-4 Api Key.
 
 ## Installation:
 

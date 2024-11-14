@@ -1,40 +1,37 @@
 #include <Arduino.h>
-#if defined(ESP32)
-  #include <WiFi.h>
-#elif defined(ESP8266)
-  #include <ESP8266WiFi.h>
-#endif
+#include <ESP8266WiFi.h>
 #include <Firebase_ESP_Client.h>
 
-//Provide the token generation process info.
+// Provide the token generation process info.
 #include "addons/TokenHelper.h"
-//Provide the RTDB payload printing info and other helper functions.
+// Provide the RTDB payload printing info and other helper functions.
 #include "addons/RTDBHelper.h"
 
 // Insert your network credentials
-#define WIFI_SSID "test"
-#define WIFI_PASSWORD "12345678"
+#define WIFI_SSID "GNXS-5G-187544"
+#define WIFI_PASSWORD "B43D08187544"
 
 // Insert Firebase project API Key
-#define API_KEY ""
+#define API_KEY "AIzaSyCn4ePpLlPxhUhf_bsMb4uTm121kUmfIjk"
 
-// Insert RTDB URLefine the RTDB URL */
-#define DATABASE_URL "" 
+// Insert RTDB URL
+#define DATABASE_URL "https://emotionlights-3760e-default-rtdb.asia-southeast1.firebasedatabase.app"
 
-//Define Firebase Data object
+// Define Firebase Data object
 FirebaseData fbdo;
 
 FirebaseAuth auth;
 FirebaseConfig config;
 
-//some importent variables
-String sValue, sValue2;
+// Variables
 bool signupOK = false;
 
 void setup() {
   Serial.begin(115200);
-  pinMode(D1,OUTPUT);
-  pinMode(D0,OUTPUT);
+  pinMode(D1, OUTPUT);  // Assign pin D1 for output (GPIO5 on ESP8266)
+  pinMode(D0, OUTPUT);  // Assign pin D0 for output (GPIO16 on ESP8266)
+
+  // Connect to Wi-Fi
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("Connecting to Wi-Fi");
   while (WiFi.status() != WL_CONNECTED) {
@@ -44,50 +41,48 @@ void setup() {
   Serial.println();
   Serial.print("Connected with IP: ");
   Serial.println(WiFi.localIP());
-  Serial.println();
 
-  /* Assign the api key (required) */
+  // Set Firebase API key and database URL
   config.api_key = API_KEY;
-
-  /* Assign the RTDB URL (required) */
   config.database_url = DATABASE_URL;
 
-  /* Sign up */
+  // Sign up
   if (Firebase.signUp(&config, &auth, "", "")) {
-    Serial.println("ok");
+    Serial.println("Sign up successful");
     signupOK = true;
+  } else {
+    Serial.printf("Sign up error: %s\n", config.signer.signupError.message.c_str());
   }
-  else {
-    Serial.printf("%s\n", config.signer.signupError.message.c_str());
-  }
-  Serial.printf("%d",signupOK);
-  /* Assign the callback function for the long running token generation task */
-  config.token_status_callback = tokenStatusCallback; //see addons/TokenHelper.h
 
+  // Set token status callback
+  config.token_status_callback = tokenStatusCallback; // See TokenHelper.h
+
+  // Initialize Firebase
   Firebase.begin(&config, &auth);
   Firebase.reconnectWiFi(true);
 }
 
 void loop() {
-  if (Firebase.ready() && signupOK ) {
-if (Firebase.RTDB.getString(&fbdo, "/color")) { // Change getBool to getString
-  if (fbdo.dataType() == "string") {      // Check if the fetched data type is string
-    String color = fbdo.stringData();     // Use stringData() to get the string value directly
-    Serial.println(color);             // Use boolData() to get the boolean value directly     // Use the boolean directly to set pin state
-  }
-}
-    else {
-      Serial.println(fbdo.errorReason());
+  if (Firebase.ready() && signupOK) {
+    // Read color data from Firebase
+    if (Firebase.RTDB.getString(&fbdo, "/color")) {  // Get color as string
+      if (fbdo.dataType() == "string") {
+        String color = fbdo.stringData();
+        Serial.println("Color: " + color);
+      }
+    } else {
+      Serial.println("Error fetching color: " + fbdo.errorReason());
     }
-     if (Firebase.RTDB.getBool(&fbdo, "/light")) { // Change getString to getBool
-  if (fbdo.dataType() == "boolean") {      // Check if the fetched data type is boolean
-    bool a = fbdo.boolData();              // Use boolData() to get the boolean value directly
-    Serial.println(a ? "Light is True" : "Light isFalse");  // Print "True" or "False" instead of 1 or 0
-    digitalWrite(D0, a ? HIGH : LOW);      // Use the boolean directly to set pin state
-  }
-}
-    else {
-      Serial.println(fbdo.errorReason());
+
+    // Read light status from Firebase
+    if (Firebase.RTDB.getBool(&fbdo, "/light")) {  // Get light status as boolean
+      if (fbdo.dataType() == "boolean") {
+        bool lightStatus = fbdo.boolData();
+        Serial.println(lightStatus ? "Light is ON" : "Light is OFF");
+        digitalWrite(D0, lightStatus ? HIGH : LOW);  // Control pin D0 based on light status
+      }
+    } else {
+      Serial.println("Error fetching light status: " + fbdo.errorReason());
     }
-  } 
+  }
 }
